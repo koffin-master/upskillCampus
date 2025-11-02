@@ -20,7 +20,7 @@ import warnings
 warnings.filterwarnings("ignore")
 
 # ----- CONFIG -----
-CSV_PATH = "/Users/rahmani/Desktop/Project10/MiningProcess_Flotation_Plant_Database.csv"
+CSV_PATH = "/MiningProcess_Flotation_Plant_Database.csv"  #Download the csv file with given link in Readme
 DATETIME_COL = "date"
 TARGET_COL = "% Silica Concentrate"
 TIME_FREQ = "1T"   # 1 minute. change to "1H" etc if desired
