@@ -1,70 +1,110 @@
+Machine Learning Internship Projects
+Silica Concentration Prediction & Agriculture Crop Production Forecasting
 
-Mining Process – Silica Concentration Prediction
+Overview:
+This repository contains two real-world machine learning projects completed during my internship:
+	1.	Mining Process – Silica Concentration Prediction
+	2.	Agriculture Crop Production Prediction in India
 
-Project Overview:
-This project focuses on predicting the percentage of Silica (% Silica Concentrate) in iron ore produced in a flotation mining process. The model uses real industrial time-series data to forecast silica impurity levels ahead of time, allowing engineers to take corrective actions to improve quality and reduce waste in production.
+Both projects focus on applying data science and machine learning techniques to analyze real industry datasets, build forecasting models, and extract actionable insights.
+
+Project 1: Silica Concentration Prediction in Mining Process
 
 Objective:
-	•	Predict silica impurity in iron ore concentrate.
-	•	Provide early warning for quality engineers.
-	•	Test prediction performance with and without Iron Concentrate feature.
-	•	Build a complete machine learning time-series forecasting pipeline.
+Predict the percentage of silica impurity in iron ore concentrate in a flotation processing plant.
 
 Dataset:
-Real industrial flotation plant dataset
+Real industrial dataset from a mining flotation plant
 Time period: March 2017 – September 2017
-Size: ~737,000 rows
-Mixed sampling rates: 20-second sensor readings + hourly lab results
+~700K+ time-series rows with mixture of 20-second sensor readings and hourly lab results
 
-Due to dataset size, it is not included in this repository.
+Key Tasks:
+	•	Cleaned raw industrial data (comma-separated numeric formats)
+	•	Converted timestamp to datetime and resampled to 1-minute frequency
+	•	Created lag and rolling window features
+	•	Built Random Forest model to forecast silica impurity
+	•	Compared performance with and without % Iron Concentrate feature
+	•	Evaluated multi-horizon forecasts (1, 2, 4, 8, 12, 24 hours ahead)
 
-Dataset Download Link:
-Download from Google Drive and place the file in the data folder:
-[https://drive.google.com/file/d/YOUR_FILE_ID/view](https://drive.google.com/file/d/1rCozT2HOnUhkNuTD1LAud-VDQjV-NnlU/view?usp=sharing)
+Highlights:
+	•	Accurate short-term prediction of silica concentration
+	•	Model outperformed persistence baseline for most horizons
+	•	Silica can still be predicted without iron feature, but accuracy improves when included
 
-After downloading, create a folder named data and place:
-MiningProcess_Flotation_Plant_Database.csv
+Folder Structure:
+silica_project/
+├─ src/ (processing + model file)
+├─ results/
+└─ data/ (dataset is stored here after download)
 
-Machine Learning Approach:
-	•	Cleaned industrial numeric data with comma formats.
-	•	Converted timestamps to datetime and resampled to 1-minute intervals.
-	•	Engineered lag features (1, 5, 10, 30, 60 minutes).
-	•	Computed rolling mean and standard deviation.
-	•	Added time-based features (hour, minute, weekday).
-	•	Trained Random Forest model and evaluated persistence baseline.
-	•	Forecasted silica up to 24 hours ahead.
-	•	Compared results with and without Iron Concentrate feature.
+Dataset Download:
+Due to file size, the dataset is not included.
+Download from Google Drive link (provided separately) and place inside the data folder.
 
-Key Results:
-	•	Accurate short-term prediction for silica concentration.
-	•	Prediction error increases for higher forecast horizon (expected).
-	•	Silica can still be predicted without Iron Concentrate, but accuracy improves when it is included.
-	•	Outperformed persistence baseline in multiple horizons.
+Project 2: Agriculture Crop Production Prediction in India
 
-Project Structure:
-Mining_Silica_Prediction
-├─ data/ (place dataset here)
-├─ src/ (Silica.py main script)
-└─ README.txt
+Objective:
+Analyze and predict agricultural production trends in India using historical government data (2001–2014).
 
-Requirements:
-Install dependencies:
-pip install pandas numpy scikit-learn matplotlib
+Dataset Description:
+Five CSV files containing:
+	•	Crop cultivation cost and yield by state
+	•	Crop production, area, and yield (2006–2011)
+	•	Crop varieties, recommended zones, and seasons
+	•	Agricultural index values across years
+	•	National production time-series data (1993–2014)
+
+Key Tasks:
+	•	Merged all datasets into a unified format
+	•	Cleaned numeric and year formats (eg: “2006-07”, “3-1999”)
+	•	Converted wide tables into long time-series format
+	•	Performed missing value handling and feature engineering
+	•	Trained baseline Random Forest model
+
+Insights:
+	•	India agriculture production generally increased over time
+	•	Yield per hectare is the strongest determinant of production
+	•	Cost of cultivation does not always correlate with higher production
+	•	Seasonal and regional factors significantly influence outputs
+
+Folder Structure:
+agriculture_project/
+├─ src/ (processing + model pipeline)
+├─ notebooks/
+├─ results/
+└─ data/ (place CSV files here)
+
+Technologies Used:
+Python
+Pandas, NumPy
+Scikit-Learn
+Matplotlib
+Optional: XGBoost, Statsmodels
 
 How to Run:
-	1.	Download dataset from Google Drive and store in data folder.
-	2.	Run the script:
-python src/Silica.py
+	1.	Download datasets (mining dataset from Google Drive link, agriculture CSVs   provided)
+	2.	Place data inside the “data” folder in respective project
+	3.	Install dependencies
+pip install pandas numpy scikit-learn matplotlib
+	4.	Run the main script
+python src/your_script_name.py
 
-Features:
-	•	Real industrial time-series dataset
-	•	Data cleaning and preprocessing pipeline
-	•	Multi-step forecasting
-	•	Feature comparison with and without iron concentration
-	•	Performance comparison against baseline
+Conclusion:
+These two projects represent advanced data engineering + machine learning workflows covering:
+	•	Real industrial sensor data
+	•	Multi-file agricultural public data
+	•	Time-series modeling
+	•	Feature engineering
+	•	Forecasting and evaluation
+	•	Real-world dataset cleaning challenges
 
-Future Improvements:
-	•	Use advanced models (LSTM, GRU, Transformers)
-	•	Create dashboard (Streamlit or Plotly)
-	•	Add model explainability (SHAP)
-	•	Real-time deployment pipeline
+They demonstrate practical ML ability to solve meaningful industry and agriculture problems.
+
+
+If you want, I can also generate:
+	1.	A version with Markdown formatting
+	2.	A GitHub-ready README with badges, structure, and screenshots
+	3.	A PDF internship report
+	4.	A final PPT presentation
+
+Just tell me which one you want next.
