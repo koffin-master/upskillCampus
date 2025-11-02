@@ -98,13 +98,4 @@ These two projects represent advanced data engineering + machine learning workfl
 	•	Forecasting and evaluation
 	•	Real-world dataset cleaning challenges
 
-They demonstrate practical ML ability to solve meaningful industry and agriculture problems.
 
-
-If you want, I can also generate:
-	1.	A version with Markdown formatting
-	2.	A GitHub-ready README with badges, structure, and screenshots
-	3.	A PDF internship report
-	4.	A final PPT presentation
-
-Just tell me which one you want next.
